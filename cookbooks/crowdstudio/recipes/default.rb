@@ -1,18 +1,8 @@
 # solve locale error
 
-# execute "apt-get update" do
-#   ignore_failure true
-#   action :nothing
-# end.run_action(:run) if node['platform_family'] == "debian"
-
 # execute "dpkg --configure -a" do
 #   action :nothing
 # end.run_action(:run)
-
-# execute "apt-get upgrade -y" do
-#   ignore_failure true
-#   action :nothing
-# end.run_action(:run) if node['platform_family'] == "debian"
 
 apt_package 'python-software-properties software-properties-common' do
   action :install
@@ -31,17 +21,12 @@ apt_package 'build-essential libmagickcore-dev imagemagick libxml2-dev libxslt1-
   action :install
 end
 
-# gem_package 'ruby-shadow' do
-#   action :nothing
-# end.run_action(:install)
-
 # create a deploy group
 group 'deploy' do
   action :create
 end
 
 # create a deploy user
-
 user 'deploy' do
   comment 'Deploy user'
   username 'deploy'
@@ -58,3 +43,5 @@ directory 'apps' do
   mode 00755
   action :create
 end
+
+# source source /etc/profile.d/rvm.sh in /etc/bash.bashrc
