@@ -40,3 +40,9 @@ end
 # end
 
 # create a deploy user
+
+user 'deploy' do
+  username 'deploy'
+  shell '/bin/bash'
+  action :create
+end
