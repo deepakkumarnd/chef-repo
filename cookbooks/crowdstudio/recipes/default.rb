@@ -43,5 +43,3 @@ directory 'apps' do
   mode 00755
   action :create
 end
-
-# source source /etc/profile.d/rvm.sh in /etc/bash.bashrc

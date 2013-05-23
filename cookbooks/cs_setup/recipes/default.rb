@@ -1,0 +1,1 @@
+# source source /etc/profile.d/rvm.sh in /etc/bash.bashrc
