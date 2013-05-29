@@ -1,0 +1,4 @@
+check process nginx with pidfile /var/run/redis_<%= node['redis']['port'] %>.pid
+  start program = "/usr/sbin/service redis start"
+  stop program  = "/usr/sbin/service redis stop"
+  if failed port <%= node['redis']['port'] %> then restart
