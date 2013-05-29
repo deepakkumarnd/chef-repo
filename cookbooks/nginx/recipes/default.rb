@@ -44,3 +44,7 @@ service 'nginx' do
   supports :status => true, :restart => true, :reload => true
   action :start
 end
+
+template '/etc/nginx/sites-enabled/crowdstudio.conf' do
+  source 'crowdstudio.erb'
+end
