@@ -1,0 +1,4 @@
+check process unicorn with pidfile /home/deploy/apps/crowdstudio/current/tmp/pids/unicorn.crowdstudio.pid
+  start program "/etc/init.d/crowdstudio start"
+  stop program "/etc/init.d/crowdstudio stop"
+  if 5 restarts within 5 cycles then timeout
