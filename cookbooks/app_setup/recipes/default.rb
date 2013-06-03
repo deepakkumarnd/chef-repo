@@ -14,6 +14,6 @@ template '/etc/monit/conf.d/nginx.conf' do
   source 'nginx.erb'
 end
 
-template '/etc/monit/conf.d/redis.conf' do
-  source 'redis.erb'
+template '/etc/monit/conf.d/resque_workers.conf' do
+  source 'resque_workers.erb'
 end
