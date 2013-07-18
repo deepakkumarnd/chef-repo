@@ -1,0 +1,4 @@
+check process redis with pidfile /var/run/redis_<%= node['redis']['port'] %>.pid
+  start program = "/usr/sbin/service redis-server start"
+  stop program  = "/usr/sbin/service redis-server stop"
+  if failed port <%= node['redis']['port'] %> then restart

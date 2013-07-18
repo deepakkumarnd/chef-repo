@@ -1,0 +1,7 @@
+<% node['resque']['workers_count'] do |i| %>
+  check process resque_worker_<%= i %> with pidfile /home/deploy/apps/crowdstudio/shared/pids/resque_worker_<%= i %>.pid
+    group resque
+    start program = "cd /home/deploy/apps/crowdstudio/current; RAILS_ENV=production QUEUE=* rake resque:work"
+    stop program = "kill -SIGKILL | cat /home/deploy/apps/crowdstudio/shared/pids/resque_worker_<%= i %>.pid "
+    if changed pid 6 times within 6 cycles then stop
+<% end %>
