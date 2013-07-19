@@ -1,8 +1,8 @@
 # solve locale error
 
-# execute "dpkg --configure -a" do
-#   action :nothing
-# end.run_action(:run)
+execute "dpkg --configure -a" do
+  action :nothing
+end.run_action(:run)
 
 apt_package 'python-software-properties software-properties-common' do
   action :install
