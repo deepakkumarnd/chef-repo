@@ -1,3 +1,3 @@
 {
-	"run_list": ["recipe[apt]", "recipe[git]",  "recipe[monit]", "recipe[install_packages]", "recipe[deploy_user]", "recipe[install_ruby]", "recipe[rvm]", "recipe[app_setup]"]
+	"run_list": ["recipe[apt]", "recipe[git]",  "recipe[monit]", "recipe[install_packages]", "recipe[deploy_user]", "recipe[install_ruby]", "recipe[rvm]", "recipe[app_setup]", "recipe[nginx]"]
 }
