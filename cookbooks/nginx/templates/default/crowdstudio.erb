@@ -9,7 +9,7 @@ upstream puma {
 server {
   listen 80 default deferred;
   server_name crowdstudio.in;
-  access_log  /home/deploy/apps/crowdstudio/shared/log/access.log;
+  #access_log  /home/deploy/apps/crowdstudio/shared/log/access.log;
 
   root /home/deploy/apps/crowdstudio/current/public;
   location ^~ /assets/ {
